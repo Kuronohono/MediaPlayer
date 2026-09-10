@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1230.0" style="-fx-background-color: #181818;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.mediaplayer.PlaylistPageController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="110.33336639404297" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1015.3332722981772" minWidth="10.0" prefWidth="810.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="830.0000813802084" minWidth="0.0" prefWidth="0.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="395.6666259765625" minWidth="10.0" prefWidth="254.99993896484375" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="236.0" minHeight="0.0" prefHeight="42.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="587.0" minHeight="10.0" prefHeight="49.333346048990904" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="598.666653951009" minHeight="10.0" prefHeight="598.666653951009" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <StackPane alignment="TOP_LEFT" prefHeight="117.0" prefWidth="924.0" GridPane.columnSpan="2" GridPane.rowSpan="2">
+         <children>
+            <StackPane fx:id="backdrop_SP" alignment="BOTTOM_RIGHT" prefHeight="127.0" prefWidth="924.0">
+               <children>
+                  <ImageView fx:id="playlistImageView" fitHeight="98.0" fitWidth="924.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../images/music_header_backdrop.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: transparent;">
+                     <StackPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </StackPane.margin>
+                     <graphic>
+                        <ImageView fx:id="editHeaderIV" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../images/edit.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children></StackPane>
+            <Label fx:id="page_title" prefHeight="53.0" prefWidth="185.0" text="Playlists" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
+            </Label>
+         </children>
+      </StackPane>
+      <VBox prefHeight="575.0" prefWidth="920.0" spacing="20.0" GridPane.columnSpan="3" GridPane.rowIndex="2">
+         <children>
+            <HBox fx:id="options_hbox" alignment="CENTER_LEFT" prefHeight="63.0" prefWidth="849.0" spacing="5.0">
+               <children>
+                  <Button fx:id="play_button" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#playPlaylist" style="-fx-background-color: #08ABFC; -fx-background-radius: 40;" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+                     <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="17.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../images/play-button-arrowhead.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </HBox>
+            <VBox prefHeight="475.0" prefWidth="920.0" spacing="5.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="849.0" spacing="80.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="41.0" prefWidth="69.0" text="#" textFill="#aaaaaa">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="39.0" prefWidth="243.0" text="Title" textFill="#aaaaaa">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="48.0" layoutY="10.0" prefHeight="39.0" prefWidth="162.0" text="Album" textFill="#aaaaaa">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="timeIV" fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/clock.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="425.0" prefWidth="920.0" style="-fx-background-color: transparent; -fx-background: transparent;" vbarPolicy="NEVER">
+                     <content>
+                        <VBox fx:id="media_Vbox" prefHeight="413.0" prefWidth="910.0" spacing="15.0" />
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </children>
+         <GridPane.margin>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+      </VBox>
+      <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #252525; -fx-background: transparent; -fx-background-radius: 20;" vbarPolicy="NEVER" GridPane.columnIndex="3" GridPane.rowSpan="2147483647">
+         <content>
+            <StackPane prefHeight="693.0" prefWidth="251.0">
+               <children>
+                  <VBox fx:id="info_Vbox" alignment="TOP_CENTER" prefHeight="698.0" prefWidth="251.0" spacing="15.0" visible="false">
+                     <children>
+                        <ImageView fx:id="detailsIV" fitHeight="200.0" fitWidth="230.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../images/music_backdrop.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="title_label" alignment="CENTER" prefHeight="14.0" prefWidth="230.0" text="Title" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <VBox fx:id="credits_VBox" prefHeight="200.0" prefWidth="100.0" spacing="5.0" style="-fx-background-color: #353535; -fx-background-radius: 20;">
+                           <children>
+                              <Label text="Credits" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="15.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox fx:id="lyrics_vBox" prefHeight="185.0" prefWidth="230.0" spacing="15.0" style="-fx-background-color: #353535; -fx-background-radius: 20;" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Label text="Lyrics" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="15.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="631.0" prefWidth="289.0" style="-fx-background-color: transparent; -fx-background: transparent;" vbarPolicy="NEVER">
+                     <content>
+                        <VBox prefHeight="666.0" prefWidth="218.0">
+                           <children>
+                              <HBox fx:id="playlistHbox_options" alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="218.0">
+                                 <children>
+                                    <Label prefHeight="32.0" prefWidth="150.0" text="Playlists">
+                                       <font>
+                                          <Font name="System Bold" size="22.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <VBox fx:id="playlists_vbox" prefHeight="623.0" prefWidth="218.0" spacing="15.0" />
+                           </children>
+                        </VBox>
+                     </content>
+                     <StackPane.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="10.0" />
+                     </StackPane.margin>
+                  </ScrollPane>
+               </children>
+            </StackPane>
+         </content>
+      </ScrollPane>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</GridPane>

@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Rock",
+    "imagePath": "file:/C:/Users/User/IdeaProjects/MediaPlayer/src/main/resources/images/music_header_backdrop.jpg",
+    "mediaPaths": [
+      "music\\Abyss (from Kaiju No. 8) - YUNGBLUD .mp3",
+      "music\\CHAINSAW BLOOD - Vaundy .mp3",
+      "music\\Call It Love - Felix Jaehn  Ray Dalton .mp3",
+      "music\\Comatose - Skillet .mp3"
+    ]
+  },
+  {
+    "name": "Metal",
+    "imagePath": "file:/C:/Users/User/IdeaProjects/MediaPlayer/playlist_images/a90046c9f8226ce94eaa8c5455cc6eec.jpg",
+    "mediaPaths": [
+      "music\\Abyss (from Kaiju No. 8) - YUNGBLUD .mp3",
+      "music\\DOWN BY LAW - THE RAMPAGE from EXILE TRIBE .mp3",
+      "music\\Dynasties_and_Dystopia_from_the_series_Arcane_League_of_Legends.mp3"
+    ]
+  }
+]
