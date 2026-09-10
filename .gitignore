@@ -43,5 +43,5 @@ build/
 /videos/
 /video_image_paths/
 /playlist_images/
-/src/main/resources/plailist.json
-.gitignore://ffmpegEx/
+/src/main/resources/playlist.json
+./ffmpegEx/
