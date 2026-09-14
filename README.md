@@ -111,4 +111,3 @@ The following are known gaps, not yet implemented:
 - Playlist editing
 - File deletion
 - Playlist deletion
-- 
