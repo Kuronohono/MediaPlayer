@@ -72,3 +72,43 @@ mvn clean javafx:run
 - Side panel with extended video details
 
 ### Playlists Page
+- Create playlists of either audio or video files
+- Add a custom cover image per playlist
+- Sort and filter playlist contents
+- Display information for each item in the side panel
+
+### Settings Page
+- Change username
+- Change user profile image
+- Clear cached/unused images
+- Delete all application data
+
+### Import
+- Multiselect import of audio and video files
+- Files are copied and saved locally within the application's data directory
+
+## Project Structure
+
+### Model
+Defines teh domain entities (Music, Video, Playlist, User) and their metadata fields
+
+### View (FXML/CSS)
+Defines the alyout and styling for each page: Home, Music, Video, Playlists and Settings.
+
+### Controller
+Handles UI logic, user interaction navigation between pages and binding data to views.
+
+### Global Methods
+Abstract Java Class, supplies the controllers with methods used by most of them, simplifying the code.
+
+### Data Persistence
+- Favorites are saved to a local XML file on application close and reloaded on startup.
+- Playlists are saved in a JSON file, preserving track order and cover image reference.
+- Imported media and playlist images are copied into local application data folders rather than referenced from their original location, so the library remains valid even if the source files are moved.
+
+## Known Limitations
+The following are known gaps, not yet implemented:
+- Playlist editing
+- File deletion
+- Playlist deletion
+- 
